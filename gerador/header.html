@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>html,body{width:600px;height:92px;background:transparent;overflow:hidden}
+#row{position:absolute;left:0;right:0;top:0;height:92px;display:flex;align-items:center;justify-content:center;gap:15px}
+#row img.l{width:58px;height:58px;border-radius:14px;display:block}
+canvas{display:block}</style></head><body>
+<div id="row"><img class="l" src="oros-logo-oficial.svg"><canvas id="w"></canvas></div>
+<script>
+(async()=>{
+ const img=new Image();img.src='header-old.png';await img.decode();
+ const c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;const x=c.getContext('2d');x.drawImage(img,0,0);
+ const d=x.getImageData(0,0,c.width,c.height),p=d.data;
+ let x0=1e9,x1=-1,y0=1e9,y1=-1;
+ for(let y=0;y<c.height;y++)for(let xx=0;xx<c.width;xx++){const i=(y*c.width+xx)*4;
+   let a=Math.max(0,Math.min(1,(p[i+2]-45)/200)); // branco(b=255)->1, ambar(b~40)->0
+   if(xx<300)a=0;
+   p[i]=13;p[i+1]=12;p[i+2]=8;p[i+3]=Math.round(a*255);
+   if(a>0.4){x0=Math.min(x0,xx);x1=Math.max(x1,xx);y0=Math.min(y0,y);y1=Math.max(y1,y);}}
+ x.putImageData(d,0,0);
+ const w=x1-x0+1,h=y1-y0+1,H=36,W=Math.round(w*H/h);
+ const t=document.getElementById('w');t.width=W*2;t.height=H*2;t.style.width=W+'px';t.style.height=H+'px';
+ t.getContext('2d').drawImage(c,x0,y0,w,h,0,0,W*2,H*2);
+ document.body.dataset.ready='1';
+})();
+</script></body></html>

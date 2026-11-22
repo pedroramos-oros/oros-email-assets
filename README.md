@@ -12,3 +12,14 @@ Imagens dos e-mails da Oros (lives, newsletter, boas-vindas). Repositório públ
 | `ic-yt.png`, `ic-ig.png`, `ic-wa.png`, `ic-web.png` | Ícones do rodapé (transparentes, 56x56) |
 
 O título do `hero.jpg` muda a cada live, então esse arquivo é regerado por live.
+
+## Gerador do topo (`gerador/`)
+
+Fontes usadas para gerar as imagens acima, no macOS, sem navegador instalado.
+
+1. `snap.swift` renderiza uma página HTML em PNG usando o WebKit do sistema: `swiftc -O -o snap snap.swift`, depois `./snap <url> <saida.png> <largura> <altura> [timeout] [transparent]`.
+2. `cutout.swift` recorta a pessoa de uma foto (Vision): `./cutout <foto> <saida.png> cropX cropY cropW cropH elipseCX elipseCY elipseRX elipseRY elipseRX2 elipseRY2`. O recorte pronto do Matteo é `matteo-cut.png`.
+3. `hero.html` é o topo (600x380; saída 1200x760). O título fica na tag `<h1>`. Troque o texto e a palavra em âmbar (`<span class="a">`) a cada live.
+4. `header.html`, `strip.html` e `icon.html?k=yt|ig|wa|web` geram logo, faixa de data e ícones.
+
+Para renderizar, sirva esta pasta por HTTP local, copie as fontes da marca para `fonts/` (JetBrains Mono 500/700/800 e IBM Plex Sans 400/500/600, do manual de marca), copie `oros-polvo.svg`, `oros-logo-oficial.svg` e `header-old.png` (logo antigo do Beehiiv, usado só para extrair a palavra "OROS DATA") para a mesma pasta, e exporte o `hero` como JPEG (`sips -s format jpeg -s formatOptions 84`).

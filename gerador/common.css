@@ -1,0 +1,8 @@
+@font-face{font-family:"JB";src:url(fonts/jetbrains-mono-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:"JB";src:url(fonts/jetbrains-mono-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:"JB";src:url(fonts/jetbrains-mono-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:"Plex";src:url(fonts/ibm-plex-sans-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:"Plex";src:url(fonts/ibm-plex-sans-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:"Plex";src:url(fonts/ibm-plex-sans-latin-600-normal.woff2);font-weight:600}
+:root{--night:#0D0C08;--amber:#E89E00;--amber-t:#946200;--paper:#F9F6F0}
+*{box-sizing:border-box;margin:0;padding:0}
