@@ -25,3 +25,7 @@ Fontes usadas para gerar as imagens acima, no macOS, sem navegador instalado.
 Para renderizar, sirva esta pasta por HTTP local, copie as fontes da marca para `fonts/` (JetBrains Mono 500/700/800 e IBM Plex Sans 400/500/600, do manual de marca), copie `oros-polvo.svg`, `oros-logo-oficial.svg` e `header-old.png` (logo antigo do Beehiiv, usado só para extrair a palavra "OROS DATA") para a mesma pasta, e exporte o `hero` como JPEG (`sips -s format jpeg -s formatOptions 84`).
 
 Nota: o topo precisa ser PNG com cantos superiores transparentes (raio 24 px à esquerda e 22 px à direita), senão os cantos retangulares da imagem cobrem o arco preto do cartão no Beehiiv. Renderize com `./snap ... transparent`.
+
+## E-mail "Falta 1 hora"
+
+`hero-falta-1h.png` é o topo desse e-mail (gerado por `gerador/hero-1h.html`): título "Falta 1h pra live", subtítulo com o tema, contagem regressiva e relógio. Mesmas regras: PNG com cantos superiores transparentes.

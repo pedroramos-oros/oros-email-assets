@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>
+html,body{width:600px;height:380px;background:transparent;overflow:hidden}
+#hero{position:relative;width:600px;height:380px;overflow:hidden;border-radius:24px 22px 0 0 / 24px 24px 0 0;background:linear-gradient(#E9E4D8 0%,#F5F2EA 26%,#FFFFFF 56%)}
+.grid{position:absolute;left:0;right:0;bottom:0;height:200px;background-image:linear-gradient(rgba(232,158,0,.34) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(232,158,0,.34) 1.5px,transparent 1.5px);background-size:50px 50px;background-position:-6px 4px;-webkit-mask-image:linear-gradient(transparent 0%,#000 55%)}
+.pill{position:absolute;left:22px;top:22px;display:flex;align-items:center;gap:8px;padding:7px 18px 7px 12px;background:#fff;border:2px solid var(--night);border-radius:999px;transform:rotate(-1.6deg);box-shadow:2px 3px 0 var(--night);font:600 14.5px/1 Plex;color:var(--amber-t)}
+.pill svg{width:16px;height:16px}
+h1{position:absolute;left:22px;top:70px;width:360px;font:800 66px/0.98 JB;letter-spacing:-0.06em;color:var(--night)}
+h1 .a{color:var(--amber);text-shadow:3px 4px 0 var(--night)}
+.sub{position:absolute;left:24px;top:212px;width:350px;font:500 16px/1.35 JB;letter-spacing:-0.03em;color:#26241E}
+.sub b{color:var(--amber-t);font-weight:700}
+.abs{position:absolute}
+.count{left:24px;top:262px;width:196px;height:92px;border:2.5px dashed var(--night);border-radius:12px;background:rgba(255,255,255,.82);transform:rotate(-2deg);padding:11px 14px}
+.count .l{font:600 11px/1 Plex;letter-spacing:.14em;color:var(--amber-t);text-transform:uppercase}
+.count .d{font:800 36px/1.05 JB;letter-spacing:-0.05em;color:var(--night);margin-top:6px}
+.count .d i{font-style:normal;color:var(--amber)}
+.track{margin-top:7px;height:8px;border:2px solid var(--night);border-radius:6px;background:#fff;overflow:hidden}.track u{display:block;height:100%;width:100%;background:var(--amber)}
+.tile{z-index:6;left:542px;top:8px;width:48px;height:48px;border-radius:11px;background:var(--amber);border:4px solid #fff;box-shadow:0 0 0 2px var(--night),5px 6px 0 2px var(--night);transform:rotate(11deg);display:flex;align-items:center;justify-content:center}
+.live{z-index:6;left:366px;top:244px;display:flex;align-items:center;gap:8px;padding:7px 14px 7px 11px;background:var(--night);color:#fff;border:3px solid #fff;border-radius:999px;box-shadow:0 0 0 2px var(--night),4px 5px 0 2px var(--night);font:800 12.5px/1 JB;letter-spacing:.04em;transform:rotate(-6deg)}
+.live i{width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(232,158,0,.35)}
+svg.sp{position:absolute}
+</style></head><body>
+<div id="hero">
+ <div class="grid"></div>
+ <div class="pill"><svg viewBox="-12 -12 24 24"><path d="M0,-11 C1,-3 3,-1 11,0 C3,1 1,3 0,11 C-1,3 -3,1 -11,0 C-3,-1 -1,-3 0,-11Z" fill="#E89E00" stroke="#0D0C08" stroke-width="1.6" stroke-linejoin="round"/></svg>Começa às 19h</div>
+ <h1>Falta <span class="a">1h</span> pra live</h1>
+ <div class="sub"><b>&gt;</b> Seu primeiro agente de IA, do zero</div>
+ <div class="abs count"><div class="l">Começa em</div><div class="d">01<i>:</i>00<i>:</i>00</div><div class="track"><u></u></div></div>
+ <svg class="sp" style="left:238px;top:262px" width="84" height="90" viewBox="-2 -2 84 90">
+  <g transform="translate(4,5)" fill="#0D0C08" stroke="#0D0C08" stroke-width="3.5"><circle cx="16" cy="24" r="11"/><circle cx="64" cy="24" r="11"/><circle cx="40" cy="46" r="28"/></g>
+  <g stroke="#0D0C08" stroke-width="3.5" stroke-linecap="round"><line x1="22" y1="76" x2="15" y2="84"/><line x1="58" y1="76" x2="65" y2="84"/><line x1="40" y1="12" x2="40" y2="6"/></g>
+  <circle cx="16" cy="24" r="11" fill="#E89E00" stroke="#0D0C08" stroke-width="3.5"/><circle cx="64" cy="24" r="11" fill="#E89E00" stroke="#0D0C08" stroke-width="3.5"/>
+  <circle cx="40" cy="46" r="28" fill="#fff" stroke="#0D0C08" stroke-width="4"/>
+  <g stroke="#0D0C08" stroke-width="3" stroke-linecap="round"><line x1="40" y1="24" x2="40" y2="28"/><line x1="62" y1="46" x2="58" y2="46"/><line x1="18" y1="46" x2="22" y2="46"/></g>
+  <line x1="40" y1="46" x2="40" y2="27" stroke="#0D0C08" stroke-width="4" stroke-linecap="round"/><line x1="40" y1="46" x2="40" y2="62" stroke="#E89E00" stroke-width="4.5" stroke-linecap="round"/><circle cx="40" cy="46" r="3.4" fill="#0D0C08"/>
+ </svg>
+ <div class="abs tile"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 3 L19 11 L5 19Z" fill="#0D0C08" stroke="#0D0C08" stroke-width="2" stroke-linejoin="round"/></svg></div>
+ <div class="abs live"><i></i>HOJE · 19H</div>
+ <svg class="sp" style="left:340px;top:56px" width="26" height="26" viewBox="-13 -13 26 26"><path d="M0,-12 C1,-3 3,-1 12,0 C3,1 1,3 0,12 C-1,3 -3,1 -12,0 C-3,-1 -1,-3 0,-12Z" fill="#fff" stroke="#0D0C08" stroke-width="2" stroke-linejoin="round"/></svg>
+ <svg class="sp" style="left:344px;top:318px" width="26" height="26" viewBox="-13 -13 26 26"><path d="M0,-12 C1,-3 3,-1 12,0 C3,1 1,3 0,12 C-1,3 -3,1 -12,0 C-3,-1 -1,-3 0,-12Z" fill="#E89E00" stroke="#0D0C08" stroke-width="2" stroke-linejoin="round"/></svg>
+ <svg class="sp" style="left:330px;top:190px" width="22" height="26" viewBox="0 0 14 21"><path d="M1 1 L1 17 L5 13.5 L8 20 L10.5 19 L7.6 12.6 L13 12.4Z" fill="#E89E00" stroke="#0D0C08" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</div>
+<script src="sticker.js"></script>
+<script>
+(async()=>{
+ const hero=document.getElementById('hero');
+ const m=await sticker('matteo-cut.png',{w:182,outline:6,sx:5,sy:6});
+ m.style.cssText+='position:absolute;left:'+(396-m.dataset.pad)+'px;top:'+(10-m.dataset.pad)+'px;transform:rotate(3deg);transform-origin:50% 50%';
+ hero.appendChild(m);
+ const o=await sticker('oros-polvo.svg',{w:210,outline:6,sx:6,sy:7});
+ o.style.cssText+='position:absolute;left:'+(418-o.dataset.pad)+'px;top:'+(250-o.dataset.pad)+'px;transform:rotate(-4deg)';
+ hero.appendChild(o);
+ await document.fonts.ready; document.body.dataset.ready='1';
+})();
+</script></body></html>
