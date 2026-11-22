@@ -6,7 +6,7 @@ Imagens dos e-mails da Oros (lives, newsletter, boas-vindas). Repositório públ
 
 | Arquivo | Uso |
 | --- | --- |
-| `hero.jpg` | Topo do cartão: selo, título da live, foto do Matteo e adesivos (1200x760) |
+| `hero-transparente.png` (atual) e `hero.jpg` (antigo, cantos brancos) | Topo do cartão: selo, título da live, foto do Matteo e adesivos (1200x760) |
 | `header.png` | Logo Oros Data sobre o fundo papel (transparente) |
 | `strip.png` | Faixa "Hoje, 19h (Brasília)" com ícone de calendário (transparente) |
 | `ic-yt.png`, `ic-ig.png`, `ic-wa.png`, `ic-web.png` | Ícones do rodapé (transparentes, 56x56) |
@@ -23,3 +23,5 @@ Fontes usadas para gerar as imagens acima, no macOS, sem navegador instalado.
 4. `header.html`, `strip.html` e `icon.html?k=yt|ig|wa|web` geram logo, faixa de data e ícones.
 
 Para renderizar, sirva esta pasta por HTTP local, copie as fontes da marca para `fonts/` (JetBrains Mono 500/700/800 e IBM Plex Sans 400/500/600, do manual de marca), copie `oros-polvo.svg`, `oros-logo-oficial.svg` e `header-old.png` (logo antigo do Beehiiv, usado só para extrair a palavra "OROS DATA") para a mesma pasta, e exporte o `hero` como JPEG (`sips -s format jpeg -s formatOptions 84`).
+
+Nota: o topo precisa ser PNG com cantos superiores transparentes (raio 24 px à esquerda e 22 px à direita), senão os cantos retangulares da imagem cobrem o arco preto do cartão no Beehiiv. Renderize com `./snap ... transparent`.
