@@ -29,3 +29,7 @@ Nota: o topo precisa ser PNG com cantos superiores transparentes (raio 24 px à 
 ## E-mail "Falta 1 hora"
 
 `hero-falta-1h.png` é o topo desse e-mail (gerado por `gerador/hero-1h.html`): título "Falta 1h pra live", subtítulo com o tema, contagem regressiva e relógio. Mesmas regras: PNG com cantos superiores transparentes.
+
+## E-mail "Estamos ao vivo agora"
+
+`hero-ao-vivo.png` (gerado por `gerador/hero-aovivo.html`): selo "AO VIVO AGORA", título "Estamos ao vivo", subtítulo com o tema, painel "Transmitindo agora" e botão de play. É o e-mail mais curto dos três.
