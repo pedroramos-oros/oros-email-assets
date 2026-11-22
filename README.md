@@ -33,3 +33,7 @@ Nota: o topo precisa ser PNG com cantos superiores transparentes (raio 24 px à 
 ## E-mail "Estamos ao vivo agora"
 
 `hero-ao-vivo.png` (gerado por `gerador/hero-aovivo.html`): selo "AO VIVO AGORA", título "Estamos ao vivo", subtítulo com o tema, painel "Transmitindo agora" e botão de play. É o e-mail mais curto dos três.
+
+## Newsletter v2 (design ousado)
+
+`news-masthead.png`, `news-ia.png`, `news-neg.png`, `news-rap.png`, `news-pen.png` e `news-live.png`: topo da edição e cabeçalhos de seção (IA, Negócios, Rapidinhas, Pra pensar, Ao vivo), gerados por `gerador/news.html?k=<nome>` (renderizar com `./snap ... transparent`; alturas: masthead 380, live 300, demais 150). O polvo ganha adereços por seção (óculos e jornal, antena, moeda, raio, lâmpada). Paleta: âmbar suave #FFD27F, verde-água #BFE3DC, creme #FFF3D6, noite #0D0C08, âmbar #E89E00.

@@ -1,0 +1,72 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>
+:root{--amb:#FFD27F;--teal:#BFE3DC;--cream:#FFF3D6;--amber:#E89E00}
+html,body{margin:0;background:transparent;overflow:hidden}
+.b{position:relative;width:600px;overflow:hidden;border-radius:24px 22px 0 0/24px 24px 0 0}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--gl) 1.5px,transparent 1.5px),linear-gradient(90deg,var(--gl) 1.5px,transparent 1.5px);background-size:44px 44px;background-position:-8px 6px}
+.abs{position:absolute}
+.tag{position:absolute;background:#fff;border:2.5px solid var(--night);border-radius:9px;box-shadow:4px 5px 0 var(--night);padding:5px 16px 7px;font:800 var(--ts,44px)/1 JB;letter-spacing:-0.06em;color:var(--night);transform:rotate(-2.2deg)}
+.chip{position:absolute;background:var(--night);color:#fff;border-radius:999px;padding:7px 14px;font:700 12px/1 JB;letter-spacing:.06em;text-transform:uppercase}
+.day{position:absolute;background:#fff;border:2.5px solid var(--night);border-radius:8px;box-shadow:3px 4px 0 var(--night);padding:6px 12px;font:800 14px/1 JB;letter-spacing:.02em;color:var(--night)}
+svg.sp{position:absolute}
+</style></head><body>
+<div id="root"></div>
+<script src="sticker.js"></script>
+<script>
+const K=new URLSearchParams(location.search).get('k');
+const NIGHT='#0D0C08',AMBER='#E89E00';
+async function polvoURL(extraBack,extraFront){
+  const t=await (await fetch('oros-polvo.svg')).text();const d=t.match(/ d="([^"]+)"/)[1];
+  const eyes='<circle cx="516" cy="466" r="24" fill="#0D0C08"/><circle cx="710" cy="466" r="24" fill="#0D0C08"/><circle cx="526" cy="456" r="8" fill="#fff"/><circle cx="720" cy="456" r="8" fill="#fff"/>';
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -300 1200 1500">${extraBack||''}<path fill="#E89E00" fill-rule="evenodd" d="${d}"/>${eyes}${extraFront||''}</svg>`;
+  return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+}
+const glasses='<g fill="rgba(255,255,255,.35)" stroke="#0D0C08" stroke-width="18"><circle cx="506" cy="453" r="78"/><circle cx="700" cy="453" r="78"/></g><path d="M584 450 H622" stroke="#0D0C08" stroke-width="18"/>';
+const shades='<g fill="#0D0C08"><rect x="410" y="392" width="190" height="112" rx="46"/><rect x="612" y="392" width="190" height="112" rx="46"/><rect x="590" y="420" width="40" height="22"/></g><path d="M470 420 L520 420" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".6"/><path d="M672 420 L722 420" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".6"/>';
+const news='<g transform="rotate(-7 600 960)"><rect x="250" y="720" width="700" height="440" rx="30" fill="#fff" stroke="#0D0C08" stroke-width="18"/><rect x="250" y="720" width="700" height="120" rx="30" fill="#FFD27F" stroke="#0D0C08" stroke-width="18"/><g stroke="#0D0C08" stroke-width="22" stroke-linecap="round"><path d="M320 780 H620"/><path d="M320 920 H620"/><path d="M320 990 H560"/><path d="M320 1060 H600"/></g><rect x="690" y="900" width="200" height="190" rx="18" fill="#E89E00" stroke="#0D0C08" stroke-width="14"/></g>';
+const antenna='<g><path d="M600 130 V-30" stroke="#0D0C08" stroke-width="24" stroke-linecap="round"/><circle cx="600" cy="-62" r="52" fill="#fff" stroke="#0D0C08" stroke-width="18"/></g>';
+const bubble='<g transform="translate(785 -130)"><path d="M0 40 a60 60 0 0 1 60 -60 H350 a60 60 0 0 1 60 60 V230 a60 60 0 0 1 -60 60 H150 L60 380 L70 290 H60 a60 60 0 0 1 -60 -60Z" fill="#fff" stroke="#0D0C08" stroke-width="18" stroke-linejoin="round"/><path d="M100 90 L190 150 L100 210" fill="none" stroke="#0D0C08" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/><path d="M220 215 H320" stroke="#E89E00" stroke-width="30" stroke-linecap="round"/></g>';
+const coin='<g><circle cx="1000" cy="250" r="170" fill="#E89E00" stroke="#0D0C08" stroke-width="20"/><circle cx="1000" cy="250" r="125" fill="none" stroke="#0D0C08" stroke-width="12"/><path d="M1062 190 C1062 130 940 130 940 196 C940 262 1062 236 1062 304 C1062 370 938 362 938 306" fill="none" stroke="#0D0C08" stroke-width="30" stroke-linecap="round"/><path d="M1000 108 V392" stroke="#0D0C08" stroke-width="20" stroke-linecap="round"/></g>';
+const chart='<g fill="none" stroke="#0D0C08" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"><path d="M30 330 L130 210 L210 280 L310 120"/><path d="M310 120 L222 128 M310 120 L300 208"/></g>';
+const bolt='<g transform="translate(-20 -10) scale(.85)"><path d="M300 -150 L120 330 L270 330 L190 700 L520 200 L350 200 L470 -150Z" fill="#E89E00" stroke="#0D0C08" stroke-width="22" stroke-linejoin="round"/></g>';
+const bulb='<g transform="translate(980 90)"><g stroke="#E89E00" stroke-width="26" stroke-linecap="round"><path d="M0 -190 V-130"/><path d="M-150 -120 L-110 -80"/><path d="M150 -120 L110 -80"/><path d="M-200 0 H-150"/><path d="M200 0 H150"/></g><path d="M-80 90 C-150 40 -140 -70 -60 -110 C20 -150 130 -90 120 0 C115 40 80 60 60 90Z" fill="#fff" stroke="#0D0C08" stroke-width="18" stroke-linejoin="round"/><rect x="-60" y="92" width="120" height="44" rx="14" fill="#E89E00" stroke="#0D0C08" stroke-width="16"/></g>';
+const R=document.getElementById('root');
+function mk(html,css){const d=document.createElement('div');d.className='b';d.style.cssText=css;d.innerHTML=html;R.appendChild(d);return d;}
+async function put(parent,url,w,left,top,rot){const c=await sticker(url,{w,outline:6,sx:5,sy:6});c.style.cssText+=`position:absolute;left:${left-c.dataset.pad}px;top:${top-c.dataset.pad}px;transform:rotate(${rot||0}deg)`;parent.appendChild(c);return c;}
+const SPK=(c,x,y,s)=>`<svg class="sp" style="left:${x}px;top:${y}px" width="${s}" height="${s}" viewBox="-13 -13 26 26"><path d="M0,-12 C1,-3 3,-1 12,0 C3,1 1,3 0,12 C-1,3 -3,1 -12,0 C-3,-1 -1,-3 0,-12Z" fill="${c}" stroke="#0D0C08" stroke-width="2" stroke-linejoin="round"/></svg>`;
+(async()=>{
+ let d;
+ if(K==='masthead'){
+  d=mk(`<div class="grid" style="--gl:rgba(255,255,255,.55)"></div>
+   <svg class="abs" style="left:0;top:0" width="600" height="380" viewBox="0 0 600 380"><path d="M610 20 C500 -20 440 40 430 110 C420 190 340 210 352 280 C362 340 300 380 230 352" fill="none" stroke="#0D0C08" stroke-width="5" stroke-linecap="round"/></svg>
+   <div class="chip" style="left:22px;top:22px">Newsletter · seg · qua · sex</div>
+   <div class="abs" style="left:22px;top:66px;font:800 56px/0.98 JB;letter-spacing:-0.065em;color:#0D0C08;width:360px">IA sem<br>complicação</div>
+   <div class="abs" style="left:26px;top:196px;background:#0D0C08;color:#FFD27F;border:3px solid #fff;border-radius:999px;box-shadow:0 0 0 2.5px #0D0C08,4px 5px 0 2.5px #0D0C08;padding:8px 24px 11px;font:800 40px/1 JB;letter-spacing:-0.06em;transform:rotate(-3deg)">em 5 min</div>
+   <div class="day" style="left:26px;top:300px;transform:rotate(-3deg)">SEG</div><div class="day" style="left:92px;top:306px;transform:rotate(2deg)">QUA</div><div class="day" style="left:158px;top:300px;transform:rotate(-2deg)">SEX</div>
+   ${SPK('#fff',300,206,30)}${SPK('#E89E00',560,330,26)}`,'height:380px;background:#FFD27F');
+  await put(d,await polvoURL('',glasses+news),270,320,52,3);
+ }
+ if(K==='ia'){
+  d=mk(`<div class="grid" style="--gl:rgba(255,255,255,.5)"></div><div class="tag" style="left:26px;top:30px;--ts:64px">IA</div><div class="chip" style="left:30px;top:116px">o que mudou</div>${SPK('#fff',250,24,28)}`,'height:150px;background:#FFD27F');
+  await put(d,await polvoURL('',antenna+bubble),190,370,-4,2);
+ }
+ if(K==='neg'){
+  d=mk(`<div class="grid" style="--gl:rgba(255,255,255,.55)"></div><div class="tag" style="left:26px;top:30px;--ts:40px">NEGÓCIOS</div><div class="chip" style="left:30px;top:106px">dinheiro e mercado</div>${SPK('#fff',300,26,28)}`,'height:150px;background:#BFE3DC');
+  await put(d,await polvoURL('',coin+chart),190,370,-4,-2);
+ }
+ if(K==='rap'){
+  d=mk(`<div class="grid" style="--gl:rgba(232,158,0,.28)"></div><div class="tag" style="left:26px;top:30px;--ts:36px">RAPIDINHAS</div><div class="chip" style="left:30px;top:100px">também rolou</div>${SPK('#E89E00',300,30,28)}`,'height:150px;background:#FFF3D6');
+  await put(d,await polvoURL(bolt,shades),190,372,-4,3);
+ }
+ if(K==='pen'){
+  d=mk(`<div class="grid" style="--gl:rgba(255,255,255,.12)"></div><div class="tag" style="left:26px;top:30px;--ts:34px;background:#FFD27F">PRA PENSAR</div><div class="chip" style="left:30px;top:100px;background:#fff;color:#0D0C08">uma ideia só</div>${SPK('#E89E00',296,32,28)}`,'height:150px;background:#0D0C08');
+  await put(d,await polvoURL('',bulb),190,372,-4,-2);
+ }
+ if(K==='live'){
+  d=mk(`<div class="grid" style="--gl:rgba(255,255,255,.35)"></div><div class="chip" style="left:24px;top:24px;background:#0D0C08">● ao vivo no youtube</div><div class="tag" style="left:26px;top:70px;--ts:54px">AO VIVO</div><div class="abs" style="left:26px;top:162px;background:#fff;border:2.5px solid #0D0C08;border-radius:10px;box-shadow:4px 5px 0 #0D0C08;padding:9px 16px 11px;font:800 20px/1.1 JB;letter-spacing:-0.04em;color:#0D0C08;transform:rotate(1.5deg)">terça e quinta<br><span style="color:#946200">às 19h</span></div>${SPK('#fff',300,60,30)}${SPK('#0D0C08',330,230,24)}`,'height:300px;background:#E89E00');
+  await put(d,'matteo-cut.png',160,392,10,3);
+  await put(d,await polvoURL('',''),170,420,170,-4);
+ }
+ await document.fonts.ready;document.body.dataset.ready='1';
+})();
+</script></body></html>
