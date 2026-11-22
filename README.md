@@ -41,3 +41,7 @@ Nota: o topo precisa ser PNG com cantos superiores transparentes (raio 24 px à 
 ### Imagens leves (`*-leve.png`)
 
 As ilustrações da newsletter foram comprimidas para PNG de paleta (48 a 64 cores, com transparência): `news-*-leve.png`, somando cerca de 190 KB contra 860 KB das versões originais. Para recomprimir: `./rgba entrada.png saida.raw` (Swift, `gerador/rgba.swift`) e `python3 -I quant.py saida.raw final.png <cores> [1 para dithering]`. O topo "Ao vivo" tem foto, então foi reduzido para 900 px de largura. Use sempre as versões leves nos e-mails.
+
+### Fechamento: tudo leve
+
+Todos os arquivos `*-leve.*` são os que entram nos e-mails: `header-leve.png` (logo, 6 KB), `strip-leve.png` (faixa de data, 4 KB), `hero-e-hoje-leve.png`, `hero-falta-1h-leve.png` e `hero-ao-vivo-leve.png` (topos de live, ~78 KB cada, 900 px, 80 cores) e `foto-modelo-leve.jpg` (foto-modelo da newsletter, 72 KB; a original tinha 2,4 MB). O `gerador/quant.py` agora preserva 3 níveis de transparência parcial (bordas suaves). Regra para fotos reais: JPEG com 900 px de largura e qualidade 55 a 60. Os arquivos sem `-leve` são só histórico.
