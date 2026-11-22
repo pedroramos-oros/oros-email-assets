@@ -37,3 +37,7 @@ Nota: o topo precisa ser PNG com cantos superiores transparentes (raio 24 px à 
 ## Newsletter v2 (design ousado)
 
 `news-masthead.png`, `news-ia.png`, `news-neg.png`, `news-rap.png`, `news-pen.png` e `news-live.png`: topo da edição e cabeçalhos de seção (IA, Negócios, Rapidinhas, Pra pensar, Ao vivo), gerados por `gerador/news.html?k=<nome>` (renderizar com `./snap ... transparent`; alturas: masthead 380, live 300, demais 150). O polvo ganha adereços por seção (óculos e jornal, antena, moeda, raio, lâmpada). Paleta: âmbar suave #FFD27F, verde-água #BFE3DC, creme #FFF3D6, noite #0D0C08, âmbar #E89E00.
+
+### Imagens leves (`*-leve.png`)
+
+As ilustrações da newsletter foram comprimidas para PNG de paleta (48 a 64 cores, com transparência): `news-*-leve.png`, somando cerca de 190 KB contra 860 KB das versões originais. Para recomprimir: `./rgba entrada.png saida.raw` (Swift, `gerador/rgba.swift`) e `python3 -I quant.py saida.raw final.png <cores> [1 para dithering]`. O topo "Ao vivo" tem foto, então foi reduzido para 900 px de largura. Use sempre as versões leves nos e-mails.
